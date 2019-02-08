@@ -3,7 +3,7 @@ const client = new Discord.Client();
 var prefix = "#";
 client.on('message', message => {
     if (message.content == "$سرعة") {
-        var x = ["DreamKing",
+        var x = ["هلا",
 "ShAnKs",
 "شتريد",
 "أرض الأحلام",
@@ -41,7 +41,7 @@ client.on('message', message => {
 "Google",
 "Viber",
 ];
-        var x2 = ['DreamKing',
+        var x2 = ['هلا',
         "ShAnKs",
         "شتريد",
         "أرض الأحلام",
@@ -87,10 +87,10 @@ client.on('message', message => {
         
         var x3 = Math.floor(Math.random()*x.length)
         message.channel.send(` اول شخص يكتب :  __**${x[x3]}**__
-لديك 15 ثانية للاجابة`).then(msg1=> {
+لديك 20 ثانية للاجابة`).then(msg1=> {
             var r = message.channel.awaitMessages(msg => msg.content == x2[x3], {
                 maxMatches : 1,
-                time : 15000,
+                time : 20000,
                 errors : ['time']
             })
         r.catch(() => {
@@ -104,6 +104,78 @@ client.on('message', message => {
         })
     }
 })
+
+
+client.on('message', awasm => {
+    if (awasm.content == "$عواصم") {
+        var x = ["ماهي عاصمة السعودية ؟",
+"ماهي عاصمة الأردن ؟",
+"ماهي عاصمة سوريا ؟",
+"ماهي عاصمة مصر ؟",
+"ماهي عاصمة لبنان ؟",
+"ماهي عاصمة العراق ؟",
+"ماهي عاصمة فلسطين ؟",
+"ماهي عاصمة اليمن ؟",
+"ماهي عاصمة الإمارات ؟",
+"ماهي عاصمة سلطنة عمان ؟",
+"ماهي عاصمة الكويت ؟",
+"ماهي عاصمة قطر ؟",
+"ماهي عاصمة السودان ؟",
+"ماهي عاصمة ليبيا ؟",
+"ماهي عاصمة المغرب ؟",
+"ماهي عاصمة تونس ؟",
+"ماهي عاصمة الصومال ؟",
+"ماهي عاصمة الجزائر ؟",
+"ماهي عاصمة البحرين ؟",
+"ماهي عاصمة موريتانيا ؟",
+"ماهي عاصمة جيبوتي ؟",
+"ماهي عاصمة جزر القمر ؟",
+];
+        var x2 = ['الرياض',
+        "عمان",
+        "دمشق",
+        "القاهرة",
+		"بيروت",
+		"بغداد",
+		"القدس",
+		"صنعاء",
+		"ابو ظبي",
+		"مسقط",
+		"الكويت",
+		"الدوحة",
+		"الخرطوم",
+		"طرابلس",
+		"الرباط",
+		"تونس",
+		"مقديشو",
+        "الجزائر",
+        "المنامة",
+        "نواق شط",
+        "جيبوتي",
+        "موروني",
+                 
+        ];
+        
+        var x3 = Math.floor(Math.random()*x.length)
+        awasm.channel.send(` اول شخص يكتب العاصمة :  __**${x[x3]}**__
+لديك 20 ثانية للاجابة`).then(msg1=> {
+            var r = awasm.channel.awaitMessages(msg => msg.content == x2[x3], {
+                maxMatches : 1,
+                time : 20000,
+                errors : ['time']
+            })
+        r.catch(() => {
+            return awasm.channel.send(`:negative_squared_cross_mark: لقد انتهى الوقت ولم يقم أحد بالأجابة بشكل صحيح 
+            الإجآبة الصحيحةة هي __**${x2[x3]}**__`)
+        })
+        
+        r.then((collected)=> {
+            awasm.channel.send(`${collected.first().author} لقد قمت بكتابة العاصمة في الوقت المناسب  `);
+        })
+        })
+    }
+})
+
 
 client.on('message', puz => {
     if (puz.content == "$لغز") {
@@ -189,10 +261,10 @@ client.on('message', fkk => {
         
         var x3 = Math.floor(Math.random()*x.length)
         fkk.channel.send(`اول شخص يفكك :  __**${x[x3]}**__
-لديك 15 ثانية للاجابة`).then(msg1=> {
+لديك 20 ثانية للاجابة`).then(msg1=> {
             var r = fkk.channel.awaitMessages(msg => msg.content == x2[x3], {
                 maxMatches : 1,
-                time : 15000,
+                time : 20000,
                 errors : ['time']
             })
         r.catch(() => {
